@@ -4,6 +4,7 @@ from .models import Activity
 
 class ActivitySerializer(serializers.ModelSerializer):
     user_name = serializers.CharField(source='user.username', read_only=True)
+    action_display = serializers.CharField(source='get_action_display', read_only=True)
 
     class Meta:
         model = Activity
